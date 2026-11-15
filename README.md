@@ -18,6 +18,4 @@
 - Pixel Operator (Regular/Bold) — латиница, Jayvee Enaguas, CC0 1.0: https://github.com/jayveenaguas/Pixel-Operator
 - basis33 — кириллица, MIT/Expat.
 
-## AI-инструменты
-- opencode с моделью DeepSeek V4.1 Flash Free — написание кода.
-- Claude — составление промтов.
+
