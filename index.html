@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List — Retro Desktop</title>
+  <meta name="description" content="A small to-do list on a retro 1-bit desktop.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%209'%20shape-rendering='crispEdges'%3E%3Crect%20width='9'%20height='9'/%3E%3Cg%20fill='%23fff'%3E%3Crect%20x='1'%20y='4'%20width='2'%20height='2'/%3E%3Crect%20x='2'%20y='5'%20width='2'%20height='2'/%3E%3Crect%20x='3'%20y='6'%20width='2'%20height='2'/%3E%3Crect%20x='4'%20y='5'%20width='2'%20height='2'/%3E%3Crect%20x='5'%20y='4'%20width='2'%20height='2'/%3E%3Crect%20x='6'%20y='3'%20width='2'%20height='2'/%3E%3Crect%20x='7'%20y='2'%20width='2'%20height='2'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen">
+    <header class="menubar">
+      <span class="menubar-logo" aria-hidden="true">
+        <svg viewBox="0 0 9 9" width="18" height="18" shape-rendering="crispEdges" focusable="false">
+          <rect width="9" height="9" fill="#000"></rect>
+          <g fill="#fff">
+            <rect x="1" y="4" width="2" height="2"></rect>
+            <rect x="2" y="5" width="2" height="2"></rect>
+            <rect x="3" y="6" width="2" height="2"></rect>
+            <rect x="4" y="5" width="2" height="2"></rect>
+            <rect x="5" y="4" width="2" height="2"></rect>
+            <rect x="6" y="3" width="2" height="2"></rect>
+            <rect x="7" y="2" width="2" height="2"></rect>
+          </g>
+        </svg>
+      </span>
+
+      <nav class="menu" aria-label="Main menu">
+        <div class="menu-group">
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-file">File</button>
+          <ul class="menu-list" id="menu-file" hidden>
+            <li><button type="button" data-menu-action="new-task">New Task</button></li>
+            <li><button type="button" data-menu-action="close-window">Close Window</button></li>
+          </ul>
+        </div>
+        <div class="menu-group">
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-view">View</button>
+          <ul class="menu-list" id="menu-view" hidden>
+            <li><button type="button" data-menu-action="show-tasks">Tasks</button></li>
+            <li><button type="button" data-menu-action="show-about">About</button></li>
+          </ul>
+        </div>
+        <div class="menu-group">
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-special">Special</button>
+          <ul class="menu-list" id="menu-special" hidden>
+            <li><button type="button" data-menu-action="clear-done">Clear Done</button></li>
+          </ul>
+        </div>
+      </nav>
+
+      <span class="menubar-brand" aria-hidden="true">To-Do 1.0</span>
+    </header>
+
+    <main class="desktop" id="desktop">
+      <div class="desktop-icons" role="group" aria-label="Desktop icons">
+        <button class="desk-icon" type="button" data-window-target="tasks" aria-controls="window-tasks" aria-expanded="true">
+          <span class="desk-icon__art" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="64" height="64" shape-rendering="crispEdges" focusable="false">
+              <rect x="5" y="4" width="22" height="26" fill="#000"></rect>
+              <rect x="10" y="2" width="12" height="6" fill="#000"></rect>
+              <rect x="7" y="6" width="18" height="22" fill="#fff"></rect>
+              <rect x="12" y="3" width="8" height="3" fill="#fff"></rect>
+              <rect x="8" y="10" width="4" height="4" fill="#000"></rect>
+              <rect x="9" y="11" width="2" height="2" fill="#fff"></rect>
+              <rect x="15" y="10" width="8" height="2" fill="#000"></rect>
+              <rect x="8" y="16" width="4" height="4" fill="#000"></rect>
+              <rect x="9" y="17" width="2" height="2" fill="#fff"></rect>
+              <rect x="15" y="16" width="8" height="2" fill="#000"></rect>
+              <rect x="8" y="22" width="4" height="4" fill="#000"></rect>
+              <rect x="15" y="22" width="5" height="2" fill="#000"></rect>
+            </svg>
+          </span>
+          <span class="desk-icon__label">Tasks</span>
+        </button>
+
+        <button class="desk-icon" type="button" data-window-target="about" aria-controls="window-about" aria-expanded="false">
+          <span class="desk-icon__art" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="64" height="64" shape-rendering="crispEdges" focusable="false">
+              <rect x="4" y="5" width="24" height="24" fill="#000"></rect>
+              <rect x="4" y="29" width="8" height="2" fill="#000"></rect>
+              <rect x="20" y="29" width="8" height="2" fill="#000"></rect>
+              <rect x="6" y="7" width="20" height="20" fill="#fff"></rect>
+              <rect x="8" y="8" width="16" height="10" fill="#000"></rect>
+              <rect x="10" y="10" width="12" height="6" fill="#fff"></rect>
+              <rect x="15" y="10" width="2" height="1" fill="#000"></rect>
+              <rect x="15" y="12" width="2" height="3" fill="#000"></rect>
+              <rect x="9" y="21" width="14" height="2" fill="#000"></rect>
+            </svg>
+          </span>
+          <span class="desk-icon__label">About</span>
+        </button>
+      </div>
+
+      <section class="window window--tasks" id="window-tasks" aria-labelledby="tasks-title" tabindex="-1">
+        <div class="titlebar">
+          <button class="close-box" type="button" data-close="tasks" aria-label="Close Tasks window"><svg class="close-x" viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><g stroke="#b3b3b3" stroke-width="2"><line x1="1" y1="1" x2="15" y2="15"></line><line x1="15" y1="1" x2="1" y2="15"></line></g></svg></button>
+          <h1 class="window-title" id="tasks-title">Tasks</h1>
+          <span aria-hidden="true"></span>
+        </div>
+        <div class="window-body tasks-body">
+          <form class="task-form" id="task-form" novalidate>
+            <label class="sr-only" for="task-input">New task</label>
+            <input class="task-input" id="task-input" name="task" type="text" maxlength="200" autocomplete="off" enterkeyhint="done" placeholder="New task..." aria-describedby="form-note">
+            <button class="btn btn--primary" type="submit">Add</button>
+          </form>
+          <p class="form-note" id="form-note" role="status" hidden></p>
+
+          <div class="list-wrap">
+            <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+            <p class="empty-state" id="empty-state">No tasks yet — add the first one above.</p>
+          </div>
+
+          <footer class="window-footer">
+            <p class="task-count" id="task-count" aria-live="polite">0 open · 0 done</p>
+            <button class="btn btn--small" id="clear-done" type="button" disabled>Clear done</button>
+          </footer>
+        </div>
+      </section>
+
+      <section class="window window--about" id="window-about" aria-labelledby="about-title" tabindex="-1" hidden>
+        <div class="titlebar">
+          <button class="close-box" type="button" data-close="about" aria-label="Close About window"><svg class="close-x" viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><g stroke="#b3b3b3" stroke-width="2"><line x1="1" y1="1" x2="15" y2="15"></line><line x1="15" y1="1" x2="1" y2="15"></line></g></svg></button>
+          <h2 class="window-title" id="about-title">About</h2>
+          <span aria-hidden="true"></span>
+        </div>
+        <div class="window-body about-body">
+          <p class="about-kicker">System 1.0</p>
+          <h3 class="about-heading">To-Do List</h3>
+          <p>Список задач: создавай, отмечай выполненное, удаляй лишнее.</p>
+          <p>Все данные хранятся только в этом браузере. Аккаунт и сервер не нужны.</p>
+          <div class="about-rule" aria-hidden="true"></div>
+          <p class="about-meta">Version 1.0<br>Plain HTML, CSS and JavaScript</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

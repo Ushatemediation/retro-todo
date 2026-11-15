@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+package.json
+package-lock.json
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.log
+DESIGN_NOTES.md
+finalchecks.js
+*checks*.js
+test-*.js
+scratch/
