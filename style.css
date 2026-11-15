@@ -1,4 +1,3 @@
-/* Pixel Operator (CC0 1.0) — латиница; шрифт взят из референса gleb.solutions. */
 @font-face {
   font-family: "Pixel Operator";
   font-style: normal;
@@ -17,9 +16,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
 }
 
-/* basis33 (MIT) — кириллица: в Pixel Operator нет ни одного глифа U+0400-04FF.
-   size-adjust выравнивает x-height basis33 (6/16) с Pixel Operator (7/16),
-   ascent/descent-override — общую базовую линию в смешанных строках. */
 @font-face {
   font-family: "basis33";
   font-style: normal;
@@ -99,8 +95,6 @@ button {
   white-space: nowrap;
   border: 0;
 }
-
-
 
 .screen {
   position: relative;
@@ -241,8 +235,6 @@ button {
   white-space: nowrap;
 }
 
-
-
 .desktop {
   position: relative;
   flex: 1 1 auto;
@@ -318,8 +310,6 @@ button {
   outline: 2px solid #000;
   outline-offset: 2px;
 }
-
-
 
 .window {
   position: absolute;
@@ -437,8 +427,6 @@ button {
   padding: 14px 16px;
   overflow-y: auto;
 }
-
-
 
 .task-form {
   flex: 0 0 auto;
@@ -700,8 +688,6 @@ button {
   white-space: nowrap;
 }
 
-
-
 .about-kicker {
   margin: 0 0 6px;
   font-size: 16px;
@@ -733,8 +719,6 @@ button {
   margin: 0;
   font-size: 16px;
 }
-
-
 
 @media (max-width: 989px) {
   body {

@@ -39,7 +39,6 @@
     return 'task-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
   }
 
-
   function loadTasks() {
     var raw;
 
@@ -96,12 +95,10 @@
     return loaded;
   }
 
-  // Сохранение не должно ломать интерфейс, если хранилище недоступно.
   function saveTasks() {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
     } catch (error) {
-      // Работаем дальше без сохранения.
     }
   }
 
@@ -240,8 +237,6 @@
     }
   }
 
-
-
   function bringToFront(key) {
     var win = windowEls[key];
     if (!win) {
@@ -324,8 +319,6 @@
 
     closeWindow(key);
   }
-
-
 
   function closeMenu(returnFocus) {
     if (!openMenuGroup) {
@@ -430,8 +423,6 @@
     }
   });
 
-
-
   Object.keys(iconEls).forEach(function (key) {
     iconEls[key].addEventListener('click', function () {
       if (key === 'tasks') {
@@ -459,8 +450,6 @@
       closeWindow(button.getAttribute('data-close'));
     });
   });
-
-
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -507,7 +496,6 @@
   clearButton.addEventListener('click', function () {
     clearDone(false);
   });
-
 
   renderTasks();
   updateCloseMenuState();
